@@ -1,25 +1,62 @@
-<start> ::= <command>
 
-<command> ::= <user-command> | <pass-command> | <cwd-command> | <list-command> | <retr-command> | <quit-command>
 
-<user-command> ::= "USER" <username>
+%const% VARIANCE_MAX := 1
+%%% %const% VARIANCE_MAX := 3
 
-<pass-command> ::= "PASS" <password>
+%section% := value
 
-<cwd-command> ::= "CWD" <directory>
+filename :=
+    file1.txt
+    file2.txt
+    file3.txt
+    
+path :=
+    .
+    /path/to/folder
 
-<list-command> ::= "LIST" ["[" <path> "]"]
+directory :=
+    /
+    /home
+    /var/www
 
-<retr-command> ::= "RETR" <filename>
+password :=
+    pass
+    password
+    12345
 
-<quit-command> ::= "QUIT"
+username :=
+    user
+    anonymous
+    ftp
 
-<username> ::= "user" | "anonymous" | "ftp"
+quit_command :=
+    QUIT
 
-<password> ::= "pass" | "password" | "12345"
+retr_command :=
+    RETR+filename+
 
-<directory> ::= "/" | "/home" | "/var/www"
+list_command :=
+    LIST+path+
 
-<path> ::= "" | "/path/to/folder"
+cwd_command := 
+    CWD+directory+
 
-<filename> ::= "file1.txt" | "file2.txt" | "file3.txt"
+pass_command :=
+    PAS+password+
+    
+user_command :=
+    USER+username+
+
+command :=
+    +user_command+
+    +pass_command+
+    +cwd_command+
+    +list_command+
+    +retr_command
+    +quit_command+
+
+
+%section% := variance
+
+main :=
+    +command+
