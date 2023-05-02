@@ -1,0 +1,25 @@
+<start> ::= <command>
+
+<command> ::= <user-command> | <pass-command> | <cwd-command> | <list-command> | <retr-command> | <quit-command>
+
+<user-command> ::= "USER" <username>
+
+<pass-command> ::= "PASS" <password>
+
+<cwd-command> ::= "CWD" <directory>
+
+<list-command> ::= "LIST" ["[" <path> "]"]
+
+<retr-command> ::= "RETR" <filename>
+
+<quit-command> ::= "QUIT"
+
+<username> ::= "user" | "anonymous" | "ftp"
+
+<password> ::= "pass" | "password" | "12345"
+
+<directory> ::= "/" | "/home" | "/var/www"
+
+<path> ::= "" | "/path/to/folder"
+
+<filename> ::= "file1.txt" | "file2.txt" | "file3.txt"
