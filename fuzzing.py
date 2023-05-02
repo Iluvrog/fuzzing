@@ -1,9 +1,9 @@
-from dharma import load_grammar
+import subprocess
+from subprocess import PIPE
 
-# Chargement de la grammaire à partir d'un fichier externe
-ftp_grammar = load_grammar("ftp_grammar.dg")
 
-# Génération des entrées de test
-for i in range(10):
-    input_data = ftp_grammar.generate("<start>")
-    print(input_data)
+
+p = subprocess.Popen("dharma -grammars ftp_grammar.dg", shell=True, stdout=PIPE, stderr=PIPE)
+out, err = p.communicate()
+print(out.decode("utf-8"))
+

@@ -52,7 +52,7 @@ command :=
     +pass_command+
     +cwd_command+
     +list_command+
-    +retr_command
+    +retr_command+
     +quit_command+
 
 
