@@ -161,4 +161,4 @@ cython_debug/
 
 
 # Ne prend pas le fichier contenant ce qui a été généré par dharma
-resultat_dharma.txt
+resultat/
