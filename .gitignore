@@ -160,5 +160,6 @@ cython_debug/
 #.idea/
 
 
-# Ne prend pas le fichier contenant ce qui a été généré par dharma
+# Ne prend pas les fichiers de résultats
 resultat/
+resultats/

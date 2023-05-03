@@ -39,10 +39,10 @@ def generate_dharma(nb = 10, dharma_grammar = "dharma_grammars/ftp_grammar.dg"):
 # Entrées :
 ## string : le message à écrire
 ## file_name : le nom du fichier, par défaut resultat_dharma.txt
-## directory : le nom du dossier où est écrit **file_name**, par défaut ./resultat/
+## directory : le nom du dossier où est écrit **file_name**, par défaut ./resultats/
 ## mode : le mode d'écriture (entre 'w' et 'a'), par défault 'w'
 #Sortie : rien
-def write_file(string, file_name = "resultat_dharma.txt", directory = "./resultat/", mode = 'w'):
+def write_file(string, file_name = "resultat_dharma_test.txt", directory = "./resultats/", mode = 'w'):
     if not os.path.exists(directory):
         os.makedirs(directory)
     f = open(directory + file_name, mode)
@@ -50,7 +50,10 @@ def write_file(string, file_name = "resultat_dharma.txt", directory = "./resulta
     f.close()
     
 
-def main():
+def test():
+    print("Teste du fichier generateur_dharma :")
+    print(" - Va générer des commandes via dharma")
+    print(" - Et les sauvargardés dans le fichier ./resultats/resultat_dharma_test.txt")
     list_command = generate_dharma()
     string = "Liste des commandes générées :\n"
     for c in list_command:
@@ -58,4 +61,4 @@ def main():
     write_file(string)
     
 if __name__ ==  "__main__":
-    main()
+    test()
