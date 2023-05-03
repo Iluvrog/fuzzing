@@ -25,7 +25,7 @@ def create_command(nb = 10, dharma_grammar = "ftp_grammar.dg"):
 ## dharma_grammar : le fichier de grammaire de dharma, par défaut ftp_grammar.dg
 # Sortie :
 ## Renvoie une liste de **nb** mots généré via la grammaire **dharma_grammar**
-def generate_dharma(nb = 10, dharma_grammar = "ftp_grammar.dg"):
+def generate_dharma(nb = 10, dharma_grammar = "dharma_grammars/ftp_grammar.dg"):
     p = subprocess.Popen(create_command(nb = nb, dharma_grammar = dharma_grammar), shell=True, stdout=PIPE, stderr=PIPE)
     out, err = p.communicate()
     list_command = out.decode("utf-8").replace('\r', '').split("\n\n")
