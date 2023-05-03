@@ -49,7 +49,9 @@ def write_file(string, file_name = "resultat_dharma_test.txt", directory = "./re
     f.write(string)
     f.close()
     
-
+# test()
+# Va tester rapidement les fonctions précedentes comme
+# indiqué dans les prints ce cette dernière
 def test():
     print("Teste du fichier generateur_dharma :")
     print(" - Va générer des commandes via dharma")

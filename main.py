@@ -1,10 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Wed May  3 18:53:04 2023
-
-@author: geoff
-"""
-
 import src.generateur_dharma as gd
 
 
