@@ -1,5 +1,7 @@
 import src.generateur_dharma as gd
-from ftplib import FTP
+import src.writer as w
+import src.ftp as FTP
+
 
 
 def main():
@@ -8,20 +10,13 @@ def main():
     string = "Liste des commandes générées :\n"
     for c in list_command:
         string += "- " + c + "\n"
-    gd.write_file(string)
+    w.write_file(string)
     
     # connection au serveur FTP local
-    host = 'localhost'
-    port =  21
-    ftp = FTP((host,port)) 
+    ftp = FTP.connexion() 
        
     # envoie des commandes
-    for com in list_command:
-            try:
-                res = ftp.sendcmd(com)
-            except:
-                # if error -> save to file ?
-                write_file(com)
+    res, err = FTP.send_command(ftp, list_command)
   
     
 if __name__ ==  "__main__":
