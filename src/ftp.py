@@ -2,7 +2,10 @@ from ftplib import FTP
 import src.writer as w
 
 def connexion(port = 21, host = 'localhost'):
-    return FTP(host,port)
+    try:
+        return FTP(host,port)
+    except:
+        return None
 
 def send_command(ftp, list_command, file_name = 'error.txt'):
     res = ""
@@ -12,6 +15,6 @@ def send_command(ftp, list_command, file_name = 'error.txt'):
                 res += ftp.sendcmd(com) + "\n"
             except:
                 # if error -> save to file ?
-                w.write_file(com, file_name = file_name, mode = 'a')
+                w.write_error("Command fail : " + com)
                 error = True
     return res, error

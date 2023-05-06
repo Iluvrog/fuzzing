@@ -14,6 +14,11 @@ def main():
     
     # connection au serveur FTP local
     ftp = FTP.connexion() 
+    
+    if ftp == None:
+        w.write_error("Impossible d'établir une connexion")
+        print("Impossible d'établir une connexion")
+        return 1
        
     # envoie des commandes
     res, err = FTP.send_command(ftp, list_command)
