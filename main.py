@@ -6,7 +6,7 @@ import src.ftp as FTP
 
 def main():
     # Génération des commandes 
-    list_command = gd.generate_dharma()
+    list_command = gd.generate_dharma(nb = 50)
     string = "Liste des commandes générées :\n"
     for c in list_command:
         string += "- " + c + "\n"

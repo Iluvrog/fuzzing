@@ -12,7 +12,7 @@ import src.writer as w
 ## dharma_grammar : le fichier de grammaire de dharma, par défaut ftp_grammar.dg
 # Sortie :
 ## La commande permet de générer **nb** mots via la grammaire **dharma_grammar**
-def create_command(nb = 10, dharma_grammar = "ftp_grammar.dg"):
+def create_command(nb = 10, dharma_grammar = "dharma_grammars/ftp_grammar.dg"):
     commande_base = "dharma -grammars"
     commande = commande_base + " " + dharma_grammar + " -count " + str(nb)
     return commande

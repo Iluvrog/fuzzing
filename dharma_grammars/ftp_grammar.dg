@@ -5,53 +5,121 @@
 
 %section% := value
 
-filename :=
-    file1.txt
-    file2.txt
-    file3.txt
+char :=
+    %range%(0-9)
+    %range%(a-z)
     
-path :=
-    .
-    /path/to/folder
+char_spec :=
+    +
+    \
+    _
+    -
+    <
+    >
+    |
+    
+word := 
+    +char+
+    +word++char+
+    +word++char+
+    +word++char+
+    +word++char+
+    +word++char+
+    +word++char+
+    +word++char+
+    +word++char+
+    
+ext :=
+    jpg
+    txt
+    zip
+    png
+    mp3
+    ogg
+    mp4
+    pdf
 
-directory :=
+filename_wt_ext :=
+    +word+
+    +word+.+word+
+
+filename :=
+    +filename_wt_ext+.+ext+
+    
+path_abs :=
     /
-    /home
-    /var/www
+    +path_abs+/+word+
+    +path_abs+/+word+
+    +path_abs+/+word+
+    +path_abs+/+word+
+    +path_abs+/+word+
+
+path_rel :=
+    .
+    ..
+    +word+
+    +path_rel+/+word+
+    +path_rel+/+word+
+    +path_rel+/+word+
+    +path_rel+/+word+
+    +path_rel+/+word+
+
+path :=
+    +path_rel+
+    +path_abs+
 
 password :=
-    pass
-    password
-    12345
+    +char+
+    +char_spec+
+    +password++char+
+    +password++char+
+    +password++char+
+    +password++char+
+    +password++char+
+    +password++char+
+    +password++char_spec+
+    +password++char_spec+
+    +password++char_spec+
+    +password++char_spec+
+    +password++char_spec+
+    +password++char_spec+
 
 username :=
-    user
-    anonymous
-    ftp
+    +word+
 
 quit_command :=
     QUIT
 
 retr_command :=
-    RETR+filename+
+    RETR +filename+
 
 list_command :=
-    LIST+path+
+    LIST +path+
 
 cwd_command := 
-    CWD+directory+
+    CWD +path+
 
 pass_command :=
-    PAS+password+
+    PAS +password+
     
 user_command :=
-    USER+username+
+    USER +username+
 
 command :=
     +user_command+
+    +user_command+
+    +user_command+
+    +pass_command+
+    +pass_command+
     +pass_command+
     +cwd_command+
+    +cwd_command+
+    +cwd_command+
     +list_command+
+    +list_command+
+    +list_command+
+    +retr_command+
+    +retr_command+
     +retr_command+
     +quit_command+
 
