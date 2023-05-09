@@ -16,8 +16,6 @@ def main():
     ftp = FTP.connexion() 
     
     if ftp == None:
-        w.write_error("Impossible d'établir une connexion")
-        print("Impossible d'établir une connexion")
         return 1
        
     # envoie des commandes
