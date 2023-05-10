@@ -12,12 +12,12 @@ def connexion(port = '21', host = 'localhost'):
 
 def send_command(ftp, list_command, file_name = 'error.txt'):
     res = ""
-    error = False
+    error = ""
     for com in list_command:
             try:
                 res += ftp.sendcmd(com) + "\n"
-            except:
+            except Exception as e:
                 # if error -> save to file ?
-                w.write_error("Command fail : " + com)
-                error = True
+                w.write_error("Commande : " + com + ", resultat : " + str(e) + "\n")
+                error += "Commande : " + com + ", resultat : " + str(e) + "\n"
     return res, error

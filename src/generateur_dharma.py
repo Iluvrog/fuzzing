@@ -31,20 +31,3 @@ def generate_dharma(nb = 10, dharma_grammar = "dharma_grammars/pure-ftpd_grammar
     list_command.pop()
     return list_command
 
-
-    
-# test()
-# Va tester rapidement les fonctions précedentes comme
-# indiqué dans les prints ce cette dernière
-def test():
-    print("Teste du fichier generateur_dharma :")
-    print(" - Va générer des commandes via dharma")
-    print(" - Et les sauvargardés dans le fichier ./resultats/resultat_dharma_test.txt")
-    list_command = generate_dharma()
-    string = "Liste des commandes générées :\n"
-    for c in list_command:
-        string += "- " + c + "\n"
-    w.write_file(string)
-    
-if __name__ ==  "__main__":
-    test()
