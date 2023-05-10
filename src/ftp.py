@@ -1,9 +1,10 @@
 from ftplib import FTP
 import src.writer as w
 
-def connexion(port = '21', host = 'localhost'):
+def connexion(port = 21, host = 'localhost'):
     try:
-        co = FTP(host, port)
+        co = FTP()
+        co.connect(host, port)
         co.login()
     except Exception as e:
         print("Erreur lors de la connexion:", e)

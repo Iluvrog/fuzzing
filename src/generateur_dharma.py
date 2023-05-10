@@ -2,8 +2,6 @@
 import subprocess
 from subprocess import PIPE
 
-import src.writer as w
-
 
 # create_command(nb = 10, dharma_grammar = "ftp_grammar.dg")
 # Va créer la commande utilisé pour générer des mots via dharma
