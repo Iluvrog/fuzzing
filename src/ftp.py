@@ -7,7 +7,7 @@ import src.writer as w
 # Entrées :
 ## port : le prt de la conexion, par défault 21
 ## host : l'adresse du serveur, par défault localhost
-# Sorties :
+# Sortie :
 ## la connexion FTP, None si impossible de la créer
 def connexion(port = 21, host = 'localhost'):
     try:
@@ -26,6 +26,8 @@ def connexion(port = 21, host = 'localhost'):
 ## ftp : la connexion ftp vers où envoyé les commandes
 ## list_command : la liste des commandes à envoyé au serveur
 ## file_name : le fichier où écrire les erreurs, par défault error.txt (dans le dossier resultat)
+# Sortie :
+## On renvoie le résultat des commandes ainsi que celle qui on créé une erreur
 def send_command(ftp, list_command, file_name = 'error.txt'):
     res = ""
     error = ""
