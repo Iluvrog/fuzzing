@@ -44,7 +44,7 @@ Un **argument** est soit :
   - un **word**
   - un **path**
   - un **filename**
-  - **path** suivie d'un **filename** sans séparation
+  - un **path** suivie d'un **filename** sans séparation
   - un **char**
   - un **filename**
   - un **password**
