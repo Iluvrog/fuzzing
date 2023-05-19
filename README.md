@@ -80,10 +80,10 @@ Un **path_abs** est un chemin absolu, c'est donc soit :
   - /
   - / suivi d'un **path_abs_chunk** suiv d'un /
 
-Un *path_abs_chunk* est soit :
+Un **path_abs_chunk** est soit :
 
-  - un *word*
-  - un *path_abs_chunk* suivi d'un / suivi d'un *word*
+  - un **word**
+  - un **path_abs_chunk** suivi d'un / suivi d'un **word**
 
 Un **filename** est un nom de fichier, il est donc composé d'un **filename_wt_ext** et d'une **ext** séparé par un .
 
