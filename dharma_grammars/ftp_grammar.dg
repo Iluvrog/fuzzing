@@ -184,6 +184,9 @@ argument :=
     +filename+
     +path++filename+
     +char+
+    +username+
+    +password+
+    +username+:+password+
     
 command_complete :=
     +command+
